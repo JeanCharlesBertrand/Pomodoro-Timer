@@ -157,7 +157,7 @@ class Timer(tk.Tk):
             self.setup_worker()
 
         self.task_finished_early = False
-        self.add_new_task() # This line is missing in the tutorial
+        self.add_new_task()     # This line is missing in the tutorial
 
         self.task_name_entry.configure(state="disabled")
         self.start_button.configure(text="Finish", command=self.finish_early)
