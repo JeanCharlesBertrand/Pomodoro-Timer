@@ -157,6 +157,7 @@ class Timer(tk.Tk):
             self.setup_worker()
 
         self.task_finished_early = False
+        self.add_new_task() # This line is missing in the tutorial
 
         self.task_name_entry.configure(state="disabled")
         self.start_button.configure(text="Finish", command=self.finish_early)
@@ -196,6 +197,7 @@ class Timer(tk.Tk):
     def add_new_task(self):
         task_name = self.task_name_entry.get()
         self.task_started_time = datetime.datetime.now()
+        print(f'Task_name: {task_name}     Started_time: {self.task_started_time}')
         add_task_sql = "INSERT INTO pymodoros VALUES (?, 0, ?)"
         self.runQuery(add_task_sql, (task_name, self.task_started_time))
 
